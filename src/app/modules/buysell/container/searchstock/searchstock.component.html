@@ -2,7 +2,7 @@
     <mat-placeholder>
     <mat-icon>search</mat-icon>
     </mat-placeholder>
-    <input matInput (keyup)="applyFilter($event.target.value)"placeholder=" Search Stocks">
+    <input matInput (keyup)="applyFilter($event.target.value)"placeholder=" Search Stocks" ng-minlength="2">
   </mat-form-field> 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
