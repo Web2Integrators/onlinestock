@@ -1,95 +1,94 @@
 {
-    "users": [
-      {
-        "email": "tom@gmail.com",
-        "password": "Password@12",
-        "firstName": "tom",
-        "lastName": "hank",
-        "phonenumber": "678-688-78798",
-        "ssn": "678-67-8789789",
-        "creditCardNumber": "6786-7869-8778",
-        "date": "09-2018",
-        "cvv": "123",
-        "amount": 100,
-        "id": 1
-      },
-      {
-        "email": "tom@gmail.com",
-        "password": "Password@12",
-        "firstName": "tom",
-        "lastName": "hank",
-        "phonenumber": "678-688-78798",
-        "ssn": "678-67-8789789",
-        "creditCardNumber": "6786-7869-8778",
-        "date": "09-2018",
-        "cvv": "123",
-        "amount": 100,
-        "id": 2
-      },
-      {
-        "email": "tom@gmail.com",
-        "password": "Password@12",
-        "firstname": "tom1",
-        "lastname": "hank1",
-        "phonenumber": "678-987-879798",
-        "ssn": "788-67-86786",
-        "creditCardNumber": "6877-8978-9709-80980",
-        "date": "09-2018",
-        "amount": 1000,
-        "cvv": "123",
-        "id": 3
-      },
-      {
-        "email": "sgfs@gmail.com",
-        "password": "Password@12",
-        "firstName": "",
-        "lastName": "fhgffhgwd",
-        "phonenumber": "344-346-66656",
-        "ssn": "434-33-544434",
-        "creditCardNumber": "3434-4545-4554-544545",
-        "date": "67676767",
-        "amount": 1000,
-        "cvv": "8997897",
-        "id": 4
-      }
-    ],
-    "stocks": [
-      {
-        "id": 1,
-        "name": "apple",
-        "postId": 1
-      },
-      {
-        "id": 2,
-        "name": "Google",
-        "postId": 1
-      }
-    ],
-    "orders": [
-      {
-        "email": "tom@gmail.com",
-        "stockid": "1",
-        "name": "apple",
-        "quantity": "10",
-        "price": "100",
-        "value": "1000"
-      },
-      {
-        "email": "tom@gmail.com",
-        "stockid": "1",
-        "name": "Google",
-        "quantity": "10",
-        "price": "100",
-        "value": "1000"
-      },
-      {
-        "email": "jsmith@virtusa.com",
-        "stockid": "2",
-        "name": "Google",
-        "quantity": "5",
-        "price": "150",
-        "value": "940"
-      }
-    ]
-   }
-
+  "users": [
+    {
+      "email": "tom@gmail.com",
+      "password": "Password@12",
+      "firstName": "tom",
+      "lastName": "hank",
+      "phonenumber": "678-688-78798",
+      "ssn": "678-67-8789789",
+      "creditCardNumber": "6786-7869-8778",
+      "date": "09-2018",
+      "cvv": "123",
+      "amount": 100,
+      "id": 1
+    },
+    {
+      "email": "tom@gmail.com",
+      "password": "Password@12",
+      "firstName": "tom",
+      "lastName": "hank",
+      "phonenumber": "678-688-78798",
+      "ssn": "678-67-8789789",
+      "creditCardNumber": "6786-7869-8778",
+      "date": "09-2018",
+      "cvv": "123",
+      "amount": 100,
+      "id": 2
+    },
+    {
+      "email": "tom@gmail.com",
+      "password": "Password@12",
+      "firstname": "tom1",
+      "lastname": "hank1",
+      "phonenumber": "678-987-879798",
+      "ssn": "788-67-86786",
+      "creditCardNumber": "6877-8978-9709-80980",
+      "date": "09-2018",
+      "amount": null,
+      "cvv": "123",
+      "id": 3
+    },
+    {
+      "email": "sgfs@gmail.com",
+      "password": "Password@12",
+      "firstName": "",
+      "lastName": "fhgffhgwd",
+      "phonenumber": "344-346-66656",
+      "ssn": "434-33-544434",
+      "creditCardNumber": "3434-4545-4554-544545",
+      "date": "67676767",
+      "amount": 1000,
+      "cvv": "8997897",
+      "id": 4
+    }
+  ],
+  "stocks": [
+    {
+      "id": 1,
+      "name": "apple",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "name": "Google",
+      "postId": 1
+    }
+  ],
+  "orders": [
+    {
+      "email": "tom@gmail.com",
+      "stockid": "1",
+      "name": "apple",
+      "quantity": "10",
+      "price": "100",
+      "value": "1000"
+    },
+    {
+      "email": "tom@gmail.com",
+      "stockid": "1",
+      "name": "Google",
+      "quantity": "10",
+      "price": "100",
+      "value": "1000"
+    },
+    {
+      "email": "jsmith@virtusa.com",
+      "stockid": "2",
+      "name": "Google",
+      "quantity": "5",
+      "price": "150",
+      "value": "940"
+    }
+  ]
+}
