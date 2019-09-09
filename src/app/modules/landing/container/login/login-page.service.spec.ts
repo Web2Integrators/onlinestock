@@ -13,6 +13,9 @@ describe('LoginPageService', () => {
     ]
   });
 });
+afterEach(inject([HttpTestingController], (httpMock: HttpTestingController) => {
+  httpMock.verify();
+}));
 
   it('should be created', () => {
     const service: LoginPageService = TestBed.get(LoginPageService);
