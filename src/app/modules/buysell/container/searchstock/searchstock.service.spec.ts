@@ -1,10 +1,7 @@
 import {
-  async,
-  ComponentFixture,
   TestBed,
   inject
 } from "@angular/core/testing";
-import { AppModule } from "src/app/app.module";
 import { SearchstockService } from "./searchstock.service";
 import {
   HttpClientTestingModule,

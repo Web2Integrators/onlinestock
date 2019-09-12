@@ -6,7 +6,6 @@ import { SearchstockService, Stock } from "./searchstock.service";
 import { MatTableModule } from "@angular/material";
 import { RouterModule } from "@angular/router";
 import { MatFormFieldModule } from "@angular/material/form-field";
-import { browser, element, by } from "protractor";
 
 describe("SearchstockComponent", () => {
   let component: SearchstockComponent;
