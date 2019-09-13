@@ -25,11 +25,11 @@ describe("SearchstockComponent", () => {
       providers: []
     })
       .compileComponents()
-      .then(() => {
-        fixture = TestBed.createComponent(SearchstockComponent);
-        component = fixture.componentInstance;
-        fixture.detectChanges();
-      });
+      // .then(() => {
+      //   fixture = TestBed.createComponent(SearchstockComponent);
+      //   component = fixture.componentInstance;
+      //   fixture.detectChanges();
+      // });
   }));
 
   beforeEach(() => {

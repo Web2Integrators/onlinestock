@@ -80,8 +80,7 @@ describe('SearchstockService', () => {
   it('testing http get for display stocks', inject(
     [HttpTestingController, SearchstockService],
     (
-      httpMock: HttpTestingController,
-      SearchstockService: SearchstockService
+      httpMock: HttpTestingController, SearchstockService: SearchstockService
     ) => {
       SearchstockService.getDisplayStocks().subscribe(mockData => {
         expect(Object.keys(mockData).length).toBe(2);
