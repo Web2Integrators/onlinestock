@@ -9,15 +9,15 @@ xdescribe('RouteGaurdService', () => {
 
   beforeEach(() => TestBed.configureTestingModule({
     providers: [{provide: Router, useClass: class { navigate = jasmine.createSpy('navigate');}},
-  RouteGaurdService ]
- 
+                RouteGaurdService ]
   }));
 
   beforeEach(() => {
-    service = TestBed.get(RouteGaurdService);
-  });
-  beforeEach(() => {
+    
   var store = {};
+
+  service = TestBed.get(RouteGaurdService);
+  router = TestBed.get(Router);
 
   spyOn(localStorage, 'getItem').and.callFake( (key:string):string => {
    return store[key] || null;
@@ -28,9 +28,7 @@ xdescribe('RouteGaurdService', () => {
   spyOn(localStorage, 'setItem').and.callFake((key:string, value:string):string =>  {
     return store[key] = <string>value;
   });
-  spyOn(localStorage, 'clear').and.callFake(() =>  {
-      store = {};
-  });
+ 
 });
 
   it('should be created', () => {
@@ -43,8 +41,8 @@ xdescribe('RouteGaurdService', () => {
     expect(service.isLoggedIn).toBe(true);
     service.logout();
     expect(service.isLoggedIn).toBe(false);
-   // service.checkUser();
   });
+
   it('checking checkUser() emailid undefined', () => {
     service.checkUser();
     expect(service.emailId).toBe(undefined);
@@ -65,17 +63,21 @@ xdescribe('RouteGaurdService', () => {
       id: 1
     }));
     service.checkUser();
+    expect(service.emailId).toBeDefined();
   });
   
   it('checking canActivate', () => {
     spyOn(service,'checkUser').and.callThrough();
     service.canActivate();
+    expect(router.navigate).toHaveBeenCalledWith(['/'])
   });
   
   it('checking canActivate else ', () => {
     spyOn(service,'checkUser').and.callThrough();
     service.isLoggedIn = true;
+    service.emailId != undefined;
     service.canActivate();
+    expect(service.isLoggedIn).toBe(true)
   });
   
 });
