@@ -1,13 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders ,HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { tap, count, map } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
+import { tap, count, map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class SearchstockService {
+  private stocksUrl ='http://localhost:3000/stocks';
+  private ordersUrl ='http://localhost:3000/orders';
+  stocks$ = this.StockService.get<Stock[]>(this.stocksUrl)
+  .pipe(
+    //tap(data => console.log('stocks: ', JSON.stringify(data))),
+    catchError(this.handleError)
+  );
+
   static findOne(arg0: string): any {
     throw new Error("Method not implemented.");
   }
@@ -15,14 +23,13 @@ export class SearchstockService {
     throw new Error("Method not implemented.");
   }
 
-  private stocksUrl ='http://localhost:3000/stocks';
-  private ordersUrl ='http://localhost:3000/orders';
+
   name: any;
   id: any;
   stockName: string;
 
   // Tried mocking data for getting stock list
-  StockList: Array<object> = [ 
+  StockList: Array<object> = [
     {
       id: 1,
       name: 'Appple',
@@ -42,7 +49,7 @@ export class SearchstockService {
    */
     constructor(private StockService: HttpClient, private http: HttpClient) {}
 
-// Trying to select all stocks by mocking 
+// Trying to select all stocks by mocking
     all(): Observable<Array<object>> {
       return of(this.StockList);
     }
@@ -163,6 +170,24 @@ export class SearchstockService {
       value: value,
     };
     return this.http.patch(`http://localhost:3000/orders/${this.id}`, patchData,httpOptions)
+  }
+
+  private handleError(err: any) {
+    // in a real world app, we may send the server to some remote logging infrastructure
+    // instead of just logging it to the console
+    let errorMessage: string;
+    if (err.error instanceof ErrorEvent) {
+      // A client-side or network error occurred. Handle it accordingly.
+      errorMessage = `An error occurred: ${err.error.message}`;
+    } else {
+      // The backend returned an unsuccessful response code.
+      // The response body may contain clues as to what went wrong,
+      errorMessage = `Backend returned code ${err.status}: ${err.body.error}`;
+    }
+
+    //save error to back end
+    console.error(err);
+    return throwError(errorMessage);
   }
 }
 

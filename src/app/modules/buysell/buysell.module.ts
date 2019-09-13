@@ -20,10 +20,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from '@angular/material';
 import { SearchInfoComponent } from './container/search-info/search-info.component';
+import { RxjsComponent } from './container/rxjs/rxjs.component';
 
 
 @NgModule({
-  declarations: [SearchstockComponent,SearchInfoComponent, BuyStockComponent, ModalComponent],
+  declarations: [SearchstockComponent,SearchInfoComponent, BuyStockComponent, ModalComponent, RxjsComponent],
   imports: [
     CommonModule,
     BuysellRoutingModule,

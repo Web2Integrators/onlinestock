@@ -1,0 +1,7 @@
+<p>rxjs works!</p>
+
+<div *ngFor="let stock of stocks$ | async; ">
+    <li>
+      name: {{stock.name}}
+    </li>
+</div>

@@ -1,5 +1,6 @@
-<mat-form-field>   
-  <mat-label> <i class="fas fa-search fa-1x"> </i>  
+<button md-raised-button class="btn-w-md ml-3" [routerLink]="['rxjs']">rxjs</button>
+<mat-form-field>
+  <mat-label> <i class="fas fa-search fa-1x"> </i>
     Search Stocks
 </mat-label>
   <input matInput (keyup)="applyFilter($event.target.value)">
@@ -8,7 +9,7 @@
 
 <div class="no-records" *ngIf="dataSource?.filteredData.length == 0"> No records found !</div>
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource?.filteredData.length !=0"> 
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" *ngIf="dataSource?.filteredData.length !=0">
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
