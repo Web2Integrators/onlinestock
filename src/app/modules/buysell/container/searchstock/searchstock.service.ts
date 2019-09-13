@@ -20,6 +20,7 @@ export class SearchstockService {
   name: any;
   id: any;
   stockName: string;
+  userEmail: string;
 
   // Tried mocking data for getting stock list
   StockList: Array<object> = [ 
@@ -71,10 +72,10 @@ export class SearchstockService {
   * to get the data which is then used to render on the view
   * @param name cannot be null
   */
-   getOrders(name: string): Observable<Orders[]> {
-     const user = JSON.parse(localStorage.getItem('testObject'));
+   getOrders(name: string, email: string): Observable<Orders[]> {
      this.stockName = name;
-     return this.StockService.get<Orders[]>(`http://localhost:3000/orders?name=${this.stockName}&email=${user.email}`).pipe(
+     this.userEmail = email;
+     return this.StockService.get<Orders[]>(`http://localhost:3000/orders?name=${this.stockName}&email=${this.userEmail}`).pipe(
        tap(data => console.log('getOrders: ' + JSON.stringify(data)))
      );
    }

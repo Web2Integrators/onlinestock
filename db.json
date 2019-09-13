@@ -4,13 +4,13 @@
       "email": "tom@gmail.com",
       "password": "Password@12",
       "firstName": "tom",
-      "lastName": "hank",
+      "lastName": "holleren",
       "phonenumber": "678-688-78798",
       "ssn": "678-67-8789789",
       "creditCardNumber": "6786-7869-8778",
       "date": "09-2018",
       "cvv": "123",
-      "amount": 100500,
+      "amount": 99400,
       "id": 1
     },
     {
@@ -37,6 +37,11 @@
       "id": 2,
       "name": "Google",
       "price": 200
+    },
+    {
+      "id": 3,
+      "name": "American Express",
+      "price": 200
     }
   ],
   "orders": [
@@ -44,9 +49,9 @@
       "email": "tom@gmail.com",
       "stockid": 1,
       "name": "Apple",
-      "quantity": 5,
+      "quantity": 9,
       "price": 100,
-      "value": 500,
+      "value": 900,
       "id": 1
     },
     {

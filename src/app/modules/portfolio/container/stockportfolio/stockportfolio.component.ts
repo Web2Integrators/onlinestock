@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioAuthServiceService , Stock } from '../portfolio-auth-service.service';
+import { PortfolioAuthServiceService , Stock, User } from '../portfolio-auth-service.service';
 import { element } from 'protractor';
 import { Observable } from 'rxjs';
 
@@ -9,15 +9,27 @@ import { Observable } from 'rxjs';
   styleUrls: ['./stockportfolio.component.scss']
 })
 export class StockportfolioComponent implements OnInit {
-
-  stocks:Stock[]=[];
   stocks$:Observable<Stock[]>;
+  email:any;
+  user:User;
   constructor(  private DataService:PortfolioAuthServiceService) { }
 
   ngOnInit() {
-    this.stocks$ = this.DataService.getStockDetails();
-    this.DataService.getStockDetails().subscribe((data) => {
-      this.stocks=data;
+    console.log(JSON.parse(localStorage.getItem('testObject')));
+    this.user = JSON.parse(localStorage.getItem('testObject'))
+    //console.log(user,"**after**")
+    Object.entries(this.user).forEach(
+      ([key, value]) => {
+        switch(key) {
+          case "email":
+              this.email = value;
+              break;
+        }
+
+      });
+
+    this.stocks$ = this.DataService.getStockDetails(this.email);
+    this.stocks$.subscribe((data) => {
       if(data.length ==0) {
         document.getElementById('header').className="disable";
         alert("No Stocks available");
