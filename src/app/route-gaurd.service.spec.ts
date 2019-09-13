@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouteGaurdService } from './route-gaurd.service';
 import { Router } from '@angular/router';
 
-xdescribe('RouteGaurdService', () => {
+describe('RouteGaurdService', () => {
   let router: Router;
   let service:RouteGaurdService;
 
@@ -13,7 +13,7 @@ xdescribe('RouteGaurdService', () => {
   }));
 
   beforeEach(() => {
-    
+
   var store = {};
 
   service = TestBed.get(RouteGaurdService);
