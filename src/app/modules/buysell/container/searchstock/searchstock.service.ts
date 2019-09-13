@@ -8,12 +8,6 @@ import { tap, count, map } from 'rxjs/operators';
 })
 
 export class SearchstockService {
-  static findOne(arg0: string): any {
-    throw new Error("Method not implemented.");
-  }
-  static all(): any {
-    throw new Error("Method not implemented.");
-  }
 
   private stocksUrl ='http://localhost:3000/stocks';
   private ordersUrl ='http://localhost:3000/orders';
@@ -23,7 +17,7 @@ export class SearchstockService {
   userEmail: string;
 
   // Tried mocking data for getting stock list
-  StockList: Array<object> = [ 
+  StockList: Array<object> = [
     {
       id: 1,
       name: 'Appple',
@@ -43,16 +37,16 @@ export class SearchstockService {
    */
     constructor(private StockService: HttpClient, private http: HttpClient) {}
 
-// Trying to select all stocks by mocking 
-    all(): Observable<Array<object>> {
-      return of(this.StockList);
-    }
-    findOne(id: string): Observable<object> {
-      const stock = this.StockList.find((s: any) => {
-        return s.id === id;
-      });
-      return of(stock);
-    }
+// // Trying to select all stocks by mocking 
+//     all(): Observable<Array<object>> {
+//       return of(this.StockList);
+//     }
+//     findOne(id: string): Observable<object> {
+//       const stock = this.StockList.find((s: any) => {
+//         return s.id === id;
+//       });
+//       return of(stock);
+//     }
 
   /**
    * This function returns the data from the fake json

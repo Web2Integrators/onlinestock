@@ -50,7 +50,7 @@ describe("SearchstockComponent", () => {
     fixture.whenStable().then(() => {
       fixture.detectChanges();
 
-      let tableRows = fixture.nativeElement.querySelectorAll("tr");
+      const tableRows = fixture.nativeElement.querySelectorAll('tr');
       expect(tableRows.length).toBe(6);
 
       // Header rows
@@ -104,47 +104,3 @@ describe("SearchstockService", () => {
   });
 });
 
-//For list of all stocks
-describe("all", () => {
-  it("should return a list of all stocks", () => {
-    const StockList = [
-      {
-        id: 1,
-        name: "Appple",
-        price: 2508
-      },
-      {
-        id: 2,
-        name: "Amazon",
-        price: 1907
-      }
-    ];
-    let response;
-    spyOn(SearchstockService, "all").and.returnValue(of(StockList));
-
-    SearchstockService.all().subscribe(res => {
-      response = res;
-    });
-    expect(response).toEqual(StockList);
-  });
-});
-
-describe("findOne", () => {
-  it("should return a single stock", () => {
-    const StockList = [
-      {
-        id: 2,
-        name: "Amazon",
-        price: 1907
-      }
-    ];
-    let response;
-    spyOn(SearchstockService, "findOne").and.returnValue(of(StockList));
-
-    SearchstockService.findOne("2").subscribe(res => {
-      response = res;
-    });
-
-    expect(response).toEqual(StockList);
-  });
-});
