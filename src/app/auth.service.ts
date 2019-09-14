@@ -14,25 +14,29 @@ export class AuthService {
 
 
   getUserDetails(email, password, firstName, lastName, phonenumber, ssn, creditCardNumber, date, cvv, amount ) {
+    
     const httpOptions = {
     headers : new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization : 'my-auth-token'
     })
   };
+
     const postData = {
-      email:email,
-      password:password,
-      firstName: firstName,
-      lastName: lastName,
-      phonenumber: phonenumber,
-      ssn: ssn,
-      creditCardNumber: creditCardNumber,
-      date: date,
-      cvv: cvv,
-      amount: amount
-  };
-    return this.http.post(`http://localhost:3000/users`, postData)
+        email:email,
+        password:password,
+        firstName: firstName,
+        lastName: lastName,
+        phonenumber: phonenumber,
+        ssn: ssn,
+        creditCardNumber: creditCardNumber,
+        date: date,
+        cvv: cvv,
+        amount: amount
+    };
+
+      return this.http.post(`http://localhost:3000/users`, postData)
+      
   }
 
 getDetails(){

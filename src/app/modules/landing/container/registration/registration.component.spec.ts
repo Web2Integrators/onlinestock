@@ -22,13 +22,13 @@ describe('RegistrationComponent', () => {
   let dummyservice:any;
   const mockData = [
     {
-      "email": "xzcvxcv@gmail.com",
+      "email": "kudani@gmail.com",
       "password": "Password@123",
-      "firstName": "zcvcxz",
-      "lastName": "xvcxb",
-      "phonenumber": "432-353-44567",
-      "ssn": "214-23-54357",
-      "creditCardNumber": "3223-5656-4565-46656",
+      "firstName": "zakaj",
+      "lastName": "uahaa",
+      "phonenumber": "432-353-4456",
+      "ssn": "214-23-5435",
+      "creditCardNumber": "3223-5656-4565-4665",
       "date": "09-2019",
       "cvv": "23244",
       "amount": 34535

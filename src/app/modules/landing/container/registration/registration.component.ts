@@ -19,19 +19,31 @@ export class RegistrationComponent implements OnInit {
   ngOnInit() {
 
     this.regDetailsForm = new FormGroup ({
-      firstName: new FormControl('',[Validators.required, Validators.minLength(3)]),
-      lastName: new FormControl('',),
-      email: new FormControl('',[Validators.required,Validators.email]),
-      phonenumber: new FormControl('',[Validators.required,Validators.maxLength(10),Validators.pattern("[0-9]+")]),
-      password: new FormControl('',[Validators.required]),
-      ssn: new FormControl('',[Validators.required,Validators.pattern("^(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}$")]),
-      // Validators.minLength(16),Validators.maxLength(16)]
-      creditCardNumber: new FormControl('',[Validators.required,Validators.pattern("^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$")]), 
-      //Mastercard starting with 51-55
-      date: new FormControl('',[Validators.required]),
-      cvv: new FormControl('',[Validators.required,Validators.pattern("^([0-9]{3,4})$")]),
-      amount: new FormControl('',Validators.required)
-   })
+            firstName: new FormControl('',[Validators.required, Validators.minLength(3)]),
+
+            lastName: new FormControl(''),
+
+            email: new FormControl('',[Validators.required,Validators.email]),
+
+            phonenumber: new FormControl('',[Validators.required,Validators.maxLength(10),
+              Validators.pattern("[0-9]+")]),
+            
+            password: new FormControl('',[Validators.required]),
+            
+            ssn: new FormControl('',[Validators.required,
+              Validators.pattern("^(?!000|666)[0-8][0-9]{2}-(?!00)[0-9]{2}-(?!0000)[0-9]{4}$")]),
+                    // Validators.minLength(16),Validators.maxLength(16)]
+            
+            creditCardNumber: new FormControl('',[Validators.required,
+              Validators.pattern("^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$")]), 
+                    //Mastercard starting with 51-55
+            
+            date: new FormControl('',[Validators.required]),
+            
+            cvv: new FormControl('',[Validators.required,Validators.pattern("^([0-9]{3,4})$")]),
+            
+            amount: new FormControl('',Validators.required)
+      })
   }
 
 
@@ -62,34 +74,36 @@ oncheck(){
 }
  onRegitration(){
   this.auth.getDetails().subscribe((data: any[]) => {
-    // tslint:disable-next-line: prefer-for-of
-    if(data.length == 0) {
-      this.oncheck();
-    }
-    else {
-    for(var i = 0; i < data.length; i++) {
-      var obj = data[i];
-      
-      if (obj.email !==  this.regDetailsForm.get('email').value ) {
-        this.oncheck();
-        break;
-      } else {
-        alert('email already exists');
-        break;
-      }
 
-    }
-  }
-  })
-};
+          if(data.length == 0) {
+            this.oncheck();
+          }
+          else {
+          
+            for(var i = 0; i < data.length; i++) {
+            var obj = data[i];
+            
+            if (obj.email !==  this.regDetailsForm.get('email').value ) {
+              this.oncheck();
+                break;
+            } 
+          else {
+              alert('email already exists');
+                break;
+            }
+          }
+        }
+     })
+  };
+
 
 public handleError(errorResponse: HttpErrorResponse) {
-  // client side or server error
+      // client side or server error
   if (errorResponse.error instanceof ErrorEvent) {
-    // console.error("client side error",errorResponse.error.message);
+      // console.error("client side error",errorResponse.error.message);
     alert('client side error,please try again');
   } else {
-    // console.error("Server side error",errorResponse);
+      // console.error("Server side error",errorResponse);
     alert('server side error,please try again');
   }
   return throwError('there is problem with service');
