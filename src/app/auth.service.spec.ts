@@ -82,9 +82,9 @@ it('testing http get for registration details',
     ];
     
     service.getUserDetails("xzcvxcv@gmail.com", "Password@123", "zcvcxz", "xvcxb", "432-353-4456", 
-        "214-23-5435","3223-5656-4565-4665", "09-2019", "23244" , 34535 ).subscribe(mockData => {
+      "214-23-5435","3223-5656-4565-4665", "09-2019", "23244" , 34535 ).subscribe(mockData => {
      
-    expect(mockData[0].email).toBe("xzcvxcv@gmail.com");
+      expect(mockData[0].email).toBe("xzcvxcv@gmail.com");
 
     });
     // We set the expectations for the HttpClient mock

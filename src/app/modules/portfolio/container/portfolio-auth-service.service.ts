@@ -10,25 +10,9 @@ export class PortfolioAuthServiceService {
   email:any;
   id:any;
 
-  constructor(private http:HttpClient) {
-    const user = JSON.parse(localStorage.getItem('testObject'))
-    //console.log(user,"**after**")
-    Object.entries(user).forEach(
-      ([key, value]) => {
-        switch(key) {
-          case "email":
-              this.email = value;
-              break;
-          case "id":
-              this.id = value;
-        }
+  constructor(private http:HttpClient) { }
 
-      });
-   }
-
-
-
-  updateUserDetails(password, firstName, lastName, phonenumber, ssn, creditcardnumber, date, cvv ){
+  updateUserDetails(password, firstName, lastName, phonenumber, ssn, creditcardnumber, date, cvv, myid ){
       const httpOptions = {
       headers : new HttpHeaders({
         'Content-Type': 'application/json',
@@ -45,16 +29,12 @@ export class PortfolioAuthServiceService {
         date:date,
         cvv:cvv
       };
-      return this.http.patch(`http://localhost:3000/users/${this.id}`,putData,httpOptions)
+      return this.http.patch(`http://localhost:3000/users/${myid}`,putData,httpOptions)
     }
 
-    getStockDetails():Observable<Stock[]> {
+    getStockDetails(myemail):Observable<Stock[]> {
       //const email = "jsmith@virtusa.com"
-      return this.http.get<Stock[]>(`http://localhost:3000/orders?email=${this.email}`)
-    }
-
-    getUserDetails(myid):Observable<User> {
-      return this.http.get<User>(`http://localhost:3000/users/${myid}`)
+      return this.http.get<Stock[]>(`http://localhost:3000/orders?email=${myemail}`)
     }
 }
 

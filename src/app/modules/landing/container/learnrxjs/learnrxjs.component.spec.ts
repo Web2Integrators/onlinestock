@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LearnrxjsComponent } from './learnrxjs.component';
 
-describe('LearnrxjsComponent', () => {
+xdescribe('LearnrxjsComponent', () => {
   let component: LearnrxjsComponent;
   let fixture: ComponentFixture<LearnrxjsComponent>;
 

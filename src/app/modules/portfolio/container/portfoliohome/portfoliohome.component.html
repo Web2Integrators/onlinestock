@@ -11,7 +11,7 @@
                       <mat-label>   <i class="fas fa-file-signature"></i>
                           Firstname
                       </mat-label>
-                      <input matInput formControlName='firstName' id="firstNameId" placeholder="{{firstname}}" minlength="3" required>
+                      <input matInput formControlName='firstName' id="firstNameId" placeholder="{{firstname}}">
                   </mat-form-field>
                   </p> 
 
@@ -20,7 +20,7 @@
                       <mat-label>  <i class="fas fa-file-signature"></i>
                           Lastname
                       </mat-label>
-                      <input matInput formControlName='lastName' id="lastNameId" placeholder="{{lastName}}" minlength="5" required>
+                      <input matInput formControlName='lastName' id="lastNameId" placeholder="{{lastName}}">
                   </mat-form-field>
                   </p>
 
@@ -29,7 +29,7 @@
                           <mat-label> <i class="fas fa-envelope fa-1x"> </i>
                               Email
                           </mat-label>
-                          <input matInput formControlName='email'  id="emailId" placeholder="Email" pattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required> 
+                          <input matInput formControlName='email'  id="emailId" placeholder="Email" pattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" > 
                       </mat-form-field>
                   </p>
 
@@ -38,8 +38,7 @@
                           <mat-label> <i class="fas fa-key fa-1x"> </i>
                               Password
                           </mat-label>
-                          <input matInput matTooltip= "Enter atleast 8 characters Uppercase,Lowercase and !@#$..." id="passwordId"  formControlName='password'  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,99}$" placeholder="password"  
-                              required>
+                          <input matInput matTooltip= "Enter atleast 8 characters Uppercase,Lowercase and !@#$..." id="passwordId"  formControlName='password'  pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,99}$" placeholder="password">
                       </mat-form-field>
                   </p>
                   
@@ -48,14 +47,14 @@
                           <mat-label><i class="fas fa-user-lock"></i>
                               SSN
                           </mat-label>
-                          <input formControlName='ssn' matInput placeholder="ssn" (keyup)="ssnValidator()" id="ssnId" required>
+                          <input formControlName='ssn' matInput placeholder="ssn"  id="ssnId" >
                       </mat-form-field>
                   </p>
 
                   <p>
                       <mat-form-field class="full-width expand">
                             
-                          <input id="accountValueId" formControlName="accountValue" matInput placeholder="AccountValue" type="number"  required>
+                          <input matInput id="accountValueId" formControlName="accountValue"  placeholder="AccountValue" type="number" >
                           <span matPrefix>$&nbsp;</span>
                           
                       </mat-form-field>
@@ -66,7 +65,7 @@
                           <mat-label> <i class="fas fa-mobile-alt"></i>
                               Phone Number
                           </mat-label>
-                          <input matInput formControlName="phone" id="phoneId" placeholder="{{phone}}"  (keyup)='phoneValidator()' minlength="12" required>
+                          <input matInput formControlName="phone" id="phoneId" placeholder="{{phone}}"  >
                       </mat-form-field>
                   </p>
                   
@@ -77,7 +76,7 @@
                           <mat-label> <i class="fas fa-credit-card"></i>
                               Credit Card Number
                           </mat-label>
-                          <input formControlName='creditcardno' matInput placeholder="creditcardno" (keyup)="cardValidator()" id="creditCardNoId"  maxlength="17" required>
+                          <input formControlName='creditcardno' matInput placeholder="creditcardno"  id="creditCardNoId" >
                         </mat-form-field>
                       </p>
                         
@@ -87,14 +86,14 @@
                               <mat-label >
                                   CVV
                               </mat-label>
-                              <input matInput formControlName="cvv" id="cvvId"  placeholder="{{cvv}}" class="example-right-align" (keyup)="cvvValidator()" style="margin-right:20px" minlength="3"  required>
+                              <input matInput formControlName="cvv" id="cvvId"  placeholder="{{cvv}}" class="example-right-align"  style="margin-right:20px">
                             </mat-form-field>
                       
                       
                       
                           <mat-form-field class="full-width spacing">
                               <mat-label>Expiry Date</mat-label>
-                              <input matInput placeholder="MM-YYYY" formControlName="expirydate" id="expiryDateId" pattern = "^((0|1)\d{1})-((19|20)\d{2})" required>
+                              <input matInput placeholder="MM-YYYY" formControlName="expirydate" id="expiryDateId" pattern = "^((0|1)\d{1})-((19|20)\d{2})">
                               
                             </mat-form-field>
                             

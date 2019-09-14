@@ -4,7 +4,7 @@
         <div id="header" class="w3-container w3-card w3-white w3-margin-bottom">
           <h4 class="w3-text-grey w3-padding-16"><i class="fa fa-shopping-bag w3-margin-right w3-xxlarge w3-text-teal"></i>Stock List</h4>
           <mat-accordion>
-              <mat-expansion-panel *ngFor="let stock of stocks">
+              <mat-expansion-panel *ngFor="let stock of stocks$ | async ">
                   <mat-expansion-panel-header>
                     <mat-panel-title>{{stock.name}}</mat-panel-title>
                   </mat-expansion-panel-header>

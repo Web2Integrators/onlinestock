@@ -22,11 +22,6 @@ import {MatDialogModule, ErrorStateMatcher, ShowOnDirtyErrorStateMatcher} from '
 import { SearchInfoComponent } from './container/search-info/search-info.component';
 
 
-
-
-
-
-
 @NgModule({
   declarations: [SearchstockComponent,SearchInfoComponent, BuyStockComponent, ModalComponent],
   imports: [
@@ -47,7 +42,7 @@ import { SearchInfoComponent } from './container/search-info/search-info.compone
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   entryComponents: [
     ModalComponent

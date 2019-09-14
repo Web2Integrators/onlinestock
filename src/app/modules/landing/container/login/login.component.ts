@@ -78,20 +78,19 @@ export class LoginComponent implements OnInit {
       })
     }, error => {
 
-         console.log(error,'inside ......');
-         this.handleError(error); //handling error
+         //console.log(error, 'inside ......');
+         this.handleError(error); // handling error
 
         })
       }
   }
-  
-  private handleError(errorResponse: HttpErrorResponse) {
+  public handleError(errorResponse: HttpErrorResponse) {
     // client side or server error
     if (errorResponse.error instanceof ErrorEvent) {
       // console.error("client side error",errorResponse.error.message);
       alert('client side error,please try again');
     } else {
-      // console.error("Server side error",errorResponse);
+       console.error("Server side error",errorResponse);
       alert('server side error,please try again');
     }
     return throwError('there is problem with service');
