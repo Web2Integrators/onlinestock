@@ -8,6 +8,7 @@ import { CanActivate, Router } from '@angular/router';
 export class RouteGaurdService implements CanActivate{
   user: any;
   emailId: unknown;
+  
   constructor(private router: Router) {
   }
 

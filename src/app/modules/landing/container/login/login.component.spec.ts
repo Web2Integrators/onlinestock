@@ -41,7 +41,7 @@ const mockLogInPageSvc = {
   getUserDetails: () => of(fakeUserData)
 };
 
-xdescribe('LoginComponent', () => {
+describe('LoginComponent', () => {
   let cmp: LoginComponent;
   let fixture: ComponentFixture<LoginComponent>;
   let logInPageSvc: LoginPageService;

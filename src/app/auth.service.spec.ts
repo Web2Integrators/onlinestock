@@ -5,7 +5,7 @@ import {
   HttpTestingController
 } from '@angular/common/http/testing';
 
-xdescribe('AuthService', () => {
+describe('AuthService', () => {
   beforeEach(() =>
     TestBed.configureTestingModule({
       providers: [AuthService],
@@ -17,6 +17,7 @@ xdescribe('AuthService', () => {
     const service: AuthService = TestBed.get(AuthService);
     expect(service).toBeTruthy();
   });
+  
 
   it('authService in Registration for get details', inject(
     [HttpTestingController, AuthService],
