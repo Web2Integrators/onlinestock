@@ -31,7 +31,7 @@ export class DashboardlayoutComponent implements OnInit {
   ngOnInit() {
     console.log('***before**');
     const user = JSON.parse(localStorage.getItem('testObject'));
-    if (user === undefined) {
+    if (user == undefined) {
       alert(' Access Denied, User not defined');
       this.onLogOut();
     } else {
