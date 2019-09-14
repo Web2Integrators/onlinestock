@@ -86,11 +86,11 @@ describe("DashboardlayoutComponent", () => {
    
   });
 
-  fit("should compile", () => {
+  it("should compile", () => {
     expect(component).toBeTruthy();
   });
 
-  fit("checking logout()", inject([Router], (router: Router) => {
+  it("checking logout()", inject([Router], (router: Router) => {
     fixture.detectChanges();
     spyOn(router, "navigate").and.stub();
     component.onLogOut();
@@ -98,7 +98,7 @@ describe("DashboardlayoutComponent", () => {
     expect(router.navigate).toHaveBeenCalledWith(["/"]);
   }));
 
-  fit('checking user defined ngOnInit', () => {
+  it('checking user defined ngOnInit', () => {
     localStorage.setItem(
       "testObject",
       JSON.stringify({
