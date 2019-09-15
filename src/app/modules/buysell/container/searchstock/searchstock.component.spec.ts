@@ -84,4 +84,17 @@ describe('SearchstockComponent', () => {
   });
 });
 
+describe("SearchstockService", () => {
+  let SearchstockService: SearchstockService;
 
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      providers: [SearchstockService]
+    });
+    SearchstockService = TestBed.get(SearchstockService);
+  });
+
+  it("should be created", () => {
+    expect(SearchstockService).toBeTruthy();
+  });
+});
