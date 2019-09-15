@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders ,HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders , HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, count, map } from 'rxjs/operators';
 
@@ -8,51 +8,19 @@ import { tap, count, map } from 'rxjs/operators';
 })
 
 export class SearchstockService {
-  static findOne(arg0: string): any {
-    throw new Error("Method not implemented.");
-  }
-  static all(): any {
-    throw new Error("Method not implemented.");
-  }
 
-  private stocksUrl ='http://localhost:3000/stocks';
-  private ordersUrl ='http://localhost:3000/orders';
+  private stocksUrl = 'http://localhost:3000/stocks';
+  private ordersUrl = 'http://localhost:3000/orders';
   name: any;
   id: any;
   stockName: string;
   userEmail: string;
-
-  // Tried mocking data for getting stock list
-  StockList: Array<object> = [ 
-    {
-      id: 1,
-      name: 'Appple',
-      price: 2508,
-    },
-    {
-      id: 2,
-      name: 'Amazon',
-      price:1907,
-    }
-  ];
-
   /**
    * Parameterized constructor to fetch the backend data
    * @param StockService The HttpClient to test the backend database
    * @param http used for adding stocks
    */
     constructor(private StockService: HttpClient, private http: HttpClient) {}
-
-// Trying to select all stocks by mocking 
-    all(): Observable<Array<object>> {
-      return of(this.StockList);
-    }
-    findOne(id: string): Observable<object> {
-      const stock = this.StockList.find((s: any) => {
-        return s.id === id;
-      });
-      return of(stock);
-    }
 
   /**
    * This function returns the data from the fake json
@@ -96,14 +64,14 @@ export class SearchstockService {
       (`http://localhost:3000/stocks?name=${this.stockName}`);
   }
 
-  public buyStocks(userEmail, stockId, name, quantity, price, value,id) {
+  public buyStocks(userEmail, stockId, name, quantity, price, value, id) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'my-auth-token'
+        Authorization: 'my-auth-token'
       })
     };
-    this.id = id
+    this.id = id;
     const postData = {
       email: userEmail,
       stockid: stockId,
@@ -112,7 +80,7 @@ export class SearchstockService {
       price: price,
       value: value,
     };
-    return this.http.put(`http://localhost:3000/orders/${this.id}`, postData)
+    return this.http.put(`http://localhost:3000/orders/${this.id}`, postData);
   }
 
   public buyStocksFirstTime(userEmail, stockId, name, quantity, price, value) {
@@ -130,28 +98,28 @@ export class SearchstockService {
       price: price,
       value: value,
     };
-    return this.http.post(`http://localhost:3000/orders`, postData)
+    return this.http.post(`http://localhost:3000/orders`, postData);
   }
 
-  public updateAccount(accountValue,id){
+  public updateAccount(accountValue, id) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'my-auth-token'
+        Authorization: 'my-auth-token'
       })
     };
     this.id = id;
     const putAccount = {
       amount : accountValue,
     };
-    return this.http.patch(`http://localhost:3000/users/${this.id}`, putAccount)
+    return this.http.patch(`http://localhost:3000/users/${this.id}`, putAccount);
   }
 
-  public sellStocks(userEmail, stockId, name, quantity, price, value,id) {
+  public sellStocks(userEmail, stockId, name, quantity, price, value, id) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
-        'Authorization': 'my-auth-token'
+        Authorization: 'my-auth-token'
       })
     };
     this.id = id;
@@ -163,7 +131,7 @@ export class SearchstockService {
       price: price,
       value: value,
     };
-    return this.http.patch(`http://localhost:3000/orders/${this.id}`, patchData,httpOptions)
+    return this.http.patch(`http://localhost:3000/orders/${this.id}`, patchData, httpOptions);
   }
 }
 
