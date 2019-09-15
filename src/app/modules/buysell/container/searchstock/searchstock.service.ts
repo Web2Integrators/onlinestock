@@ -15,21 +15,6 @@ export class SearchstockService {
   id: any;
   stockName: string;
   userEmail: string;
-
-  // Tried mocking data for getting stock list
-  StockList: Array<object> = [
-    {
-      id: 1,
-      name: 'Appple',
-      price: 2508,
-    },
-    {
-      id: 2,
-      name: 'Amazon',
-      price: 1907,
-    }
-  ];
-
   /**
    * Parameterized constructor to fetch the backend data
    * @param StockService The HttpClient to test the backend database
